@@ -3,22 +3,23 @@
 Welcome to the Scrabble challenge!
 
 ## Learning Objectives
-- Build a simple program using classes, functions, loops, and flow control
+- Build a simple program using functions, loops, and conditional statements
 - Use `git` & GitHub to commit work and open a Pull Request
 
 ## Instructions
 
 1. Fork this repository and then:
 ```sh
-$ git clone [your repo] && cd js-scrabble-challenge
-$ npm install # installs dependencies listed in package.json
+git clone [your repo] && cd js-scrabble-challenge
+npm ci # installs dependencies listed in package.json
 ```
 2. Run the tests from your project root directory. There should be a lot of failures to begin with. You can run your test suite in a few ways:
 ```sh
-$ npm test # or
-$ jasmine
+npm test
+# or
+npx jasmine
 # or run jasmine directly
-$ ./node_modules/jasmine/bin/jasmine.js
+./node_modules/jasmine/bin/jasmine.js
 ```
 3. In GitHub, [open a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from your forked repository to the challenge repository.
 4. Implement the criteria below locally and [push your code](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line) to your repository! Every push to a branch that has an open Pull Request will update it automatically with your changes.
@@ -61,30 +62,22 @@ And to total:
 
 ## Acceptance Criteria
 
-```javascript
-let scrabble = new Scrabble('')
-scrabble.score() // => 0
+```js
+scrabble('') // should return 0
 
-let scrabble = new Scrabble(" \t\n")
-scrabble.score() // => 0
+scrabble(" \t\n") // should return 0
 
-let scrabble = new Scrabble(null)
-scrabble.score() // => 0
+scrabble(null) // should return 0
 
-let scrabble = new Scrabble('a')
-scrabble.score() // => 1
+scrabble('a') // should return 1
 
-let scrabble = new Scrabble('f')
-scrabble.score() // => 4
+scrabble('f') // should return 4
 
-let scrabble = new Scrabble('street')
-scrabble.score() // => 6
+scrabble('street') // should return 6
 
-let scrabble = new Scrabble('quirky')
-scrabble.score() // => 22
+scrabble('quirky') // should return 22
 
-let scrabble = new Scrabble('OXYPHENBUTAZONE')
-scrabble.score() // => 41
+scrabble('OXYPHENBUTAZONE') // should return 41
 ```
 
 ## Extended Acceptance Criteria
@@ -98,4 +91,4 @@ Your solution should support the ability to define specific letters as double an
 Similar to above, your solution should support the ability to define double and triple word scores. To indicate a double word score, the submitted word will be enclose in a pair of curly brackets (for example `{dog}`), and for triple word score a pair of square brackets (`[dog]`). Your solution should detect these brackets and apply the correct score modifications. You should add tests for this functionality to the spec file.
 
 ### Concise Code
-Split up your `score` method in to multiple smaller methods that do one thing only. Read this [article on Clean Functions](https://github.com/ryanmcdermott/clean-code-javascript#functions) and apply the principles you think are relevant.
+Split up your `scrabble` function in to multiple smaller functions that do one thing only. Read this [article on Clean Functions](https://github.com/ryanmcdermott/clean-code-javascript#functions) and apply the principles you think are relevant.

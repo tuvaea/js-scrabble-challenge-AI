@@ -1,54 +1,37 @@
 // Note: you shouldn't need to change anything in this file.
 
-Scrabble = require('../src/scrabble')
-let scrabble;
+const scrabble = require('../src/scrabble')
 
-describe("Scrabble", function() {
-  it('returns 0 for empty words', function() {
-    scrabble = new Scrabble('')
-
-    expect(scrabble.score()).toEqual(0)
+describe("Scrabble", () => {
+  it('returns 0 for empty words', () => {
+    expect(scrabble('')).toEqual(0)
   })
 
-  it('returns 0 for whitespace', function() {
-    scrabble = new Scrabble(" \t\n")
-
-    expect(scrabble.score()).toEqual(0)
+  it('returns 0 for whitespace', () => {
+    expect(scrabble(" \t\n")).toEqual(0)
   })
 
-  it('returns 0 for null', function() {
-    scrabble = new Scrabble(null)
-
-    expect(scrabble.score()).toEqual(0)
+  it('returns 0 for null', () => {
+    expect(scrabble(null)).toEqual(0)
   })
 
-  it('scores short word', function() {
-    scrabble = new Scrabble('a')
-
-    expect(scrabble.score()).toEqual(1)
+  it('scores short word', () => {
+    expect(scrabble('a')).toEqual(1)
   })
 
-  it('scores short word', function() {
-    scrabble = new Scrabble('f')
-
-    expect(scrabble.score()).toEqual(4)
+  it('scores short word', () => {
+    expect(scrabble('f')).toEqual(4)
   })
 
-  it('scores a simple word', function() {
-    scrabble = new Scrabble('street')
-
-    expect(scrabble.score()).toEqual(6)
+  it('scores a simple word', () => {
+    expect(scrabble('street')).toEqual(6)
   })
 
-  it('scores a more complicated word', function() {
-    scrabble = new Scrabble('quirky')
-
-    expect(scrabble.score()).toEqual(22)
+  it('scores a more complicated word', () => {
+    expect(scrabble('quirky')).toEqual(22)
   })
 
-  it('scores a case-insensitive word', function() {
-    scrabble = new Scrabble('OXYPHENBUTAZONE')
-
-    expect(scrabble.score()).toEqual(41)
+  it('scores a case-insensitive word', () => {
+    expect(scrabble('OXYPHENBUTAZONE')).toEqual(41)
   })
 })

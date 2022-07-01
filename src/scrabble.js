@@ -1,6 +1,5 @@
-class Scrabble {
-  // Write your implementation here
+function scrabble() {
 
 }
 
-module.exports = Scrabble
+module.exports = scrabble
